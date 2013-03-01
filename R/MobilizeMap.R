@@ -13,6 +13,7 @@ function(latitude, longitude, e, scaleby, color='blue', symbol=20, getsubset=FAL
     projected <- projected[subset1,]
 	}
 	r = gmap(x)
+  #Important to have $mar to make everything work
  par.old <- par(no.readonly = TRUE)$mar;
   if (add==FALSE) {
     plot(r, interpolate=TRUE) 
