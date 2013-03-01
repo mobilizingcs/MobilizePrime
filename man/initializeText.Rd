@@ -31,10 +31,6 @@ a variable from your data set that contains text.
 \examples{
   data(mtcars)
   initializeText(row.names(mtcars))
-  
-  ## The function is currently defined as
-  function(variable) {
-  return(Corpus(VectorSource(variable)))
 }
 }
 \keyword{ ~manip }

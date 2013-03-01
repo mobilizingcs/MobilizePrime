@@ -16,7 +16,6 @@ Version: \tab 1.0\cr
 Date: \tab 2013-01-17\cr
 License: \tab GPL\cr
 }
-~~ An overview of how to use the package, including the most important functions ~~
 }
 \author{
 Amelia McNamara
@@ -26,9 +25,6 @@ Amelia McNamara
 }
 \keyword{ package }
 \seealso{
-~~ Optional links to other man pages, e.g. ~~
-~~ \code{\link[<pkg>:<pkg>-package]{<pkg>}} ~~
 }
 \examples{
-~~ simple examples of the most important functions ~~
 }
