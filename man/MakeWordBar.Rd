@@ -37,7 +37,5 @@ Amelia McNamara
 \examples{
 data("crude")
 MakeWordBar(crude, min.freq=10)
-
-}
 }
 \keyword{ ~hplot }

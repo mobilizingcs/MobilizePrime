@@ -32,5 +32,4 @@ a variable from your data set that contains text.
   data(mtcars)
   InitializeText(row.names(mtcars))
 }
-}
 \keyword{ ~manip }
