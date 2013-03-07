@@ -1,4 +1,4 @@
-MobilizeWordCloud <- function(text, color="BuGn", min.freq=2){
+MakeWordCloud <- function(text, color="BuGn", min.freq=2){
   if (class(text)[1]!="VCorpus"){
     stop("Remember to initialize text using initializeText()")
   }

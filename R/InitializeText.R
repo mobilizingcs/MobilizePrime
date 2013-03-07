@@ -1,3 +1,3 @@
-initializeText <- function(variable) {
+InitializeText <- function(variable) {
   return(Corpus(VectorSource(variable)))
 }

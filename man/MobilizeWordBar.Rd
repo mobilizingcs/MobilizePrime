@@ -1,5 +1,5 @@
-\name{MobilizeWordBar}
-\alias{MobilizeWordBar}
+\name{MakeWordBar}
+\alias{MakeWordBar}
 \title{
 Create a bar plot of words
 }
@@ -7,11 +7,11 @@ Create a bar plot of words
 Creates a bar plot of words from text that has been initialized to work as text in R.
 }
 \usage{
-MobilizeWordBar(text, min.freq=2)
+MakeWordBar(text, min.freq=2)
 }
 \arguments{
   \item{text}{
-a text object that has been initialized using the \code{\link{initializeText}} function.
+a text object that has been initialized using the \code{\link{InitializeText}} function.
 }
 \item{min.freq}{
 the minimum frequency of words you want to appear in the bar plot. Default is 2, so only words that appear 2 or more times in your text will be displayed in the bar plot.
@@ -36,7 +36,7 @@ Amelia McNamara
 }
 \examples{
 data("crude")
-MobilizeWordBar(crude, min.freq=10)
+MakeWordBar(crude, min.freq=10)
 
 }
 }

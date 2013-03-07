@@ -1,4 +1,4 @@
-MobilizeWordBar <-function(text, min.freq=2, ...){
+MakeWordBar <- function(text, min.freq=2, ...){
   if (class(text)[1]!="VCorpus"){
     stop("Remember to initialize text using initializeText()")
   }

@@ -1,5 +1,5 @@
-\name{initializeText}
-\alias{initializeText}
+\name{InitializeText}
+\alias{InitializeText}
 \title{
   Initialize text
 }
@@ -7,7 +7,7 @@
   Initializes text for use in R, allowing you to create word clouds and bar plots.
 }
 \usage{
-  initializeText(variable)
+  InitializeText(variable)
 }
 \arguments{
   \item{variable}{
@@ -30,7 +30,7 @@ a variable from your data set that contains text.
 }
 \examples{
   data(mtcars)
-  initializeText(row.names(mtcars))
+  InitializeText(row.names(mtcars))
 }
 }
 \keyword{ ~manip }

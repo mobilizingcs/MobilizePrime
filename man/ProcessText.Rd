@@ -1,5 +1,5 @@
-\name{processText}
-\alias{processText}
+\name{ProcessText}
+\alias{ProcessText}
 \title{
 Process text
 }
@@ -11,7 +11,7 @@ ProcessText(text, lower = TRUE, removepunctuation = TRUE, removenumbers = TRUE, 
 }
 \arguments{
   \item{text}{
-a text object that has been initialized using the \code{\link{initializeText}} function.
+a text object that has been initialized using the \code{\link{InitializeText}} function.
 }
   \item{lower}{
 logical. Do you want to convert all the words to lower case? If so, leave the default as \code{TRUE}
@@ -46,10 +46,10 @@ Amelia McNamara
 }
 
 \seealso{
- \code{\link{tm_map}}
+ \code{\link{tm_map}}, \code{\link{InitializeText}}
 }
 \examples{
 data(crude)
-processText(crude)
+ProcessText(crude)
 }
 \keyword{ ~manip }

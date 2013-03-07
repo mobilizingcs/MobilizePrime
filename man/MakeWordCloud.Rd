@@ -1,5 +1,5 @@
-\name{MobilizeWordCloud}
-\alias{MobilizeWordCloud}
+\name{MakeWordCloud}
+\alias{MakeWordCloud}
 \title{
 Plot a word cloud
 }
@@ -7,11 +7,11 @@ Plot a word cloud
 Creates a word cloud from text that has been initialized to work as text in R. 
 }
 \usage{
-MobilizeWordCloud(text, color="BuGn", min.freq=2)
+MakeWordCloud(text, color="BuGn", min.freq=2)
 }
 \arguments{
   \item{text}{
-a text object that has been initialized using the \code{\link{initializeText}} function. 
+a text object that has been initialized using the \code{\link{InitializeText}} function. 
 }
 \item{color}{
 a color brewer specification for a color range. Defaults to "BuGn", but other options can be found using the command \code{display.brewer.all(type="seq")}. 
@@ -32,11 +32,11 @@ Amelia McNamara
 \note{
 }
 \seealso{
-\code{\link{brewer}}, \code{\link{wordcloud}}~~~
+\code{\link{brewer}}, \code{\link{wordcloud}}, \code{\link{InitializeText}}
 }
 \examples{
 data("crude")
-MobilizeWordCloud(crude, min.freq=10)
+MakeWordCloud(crude, min.freq=10)
 }
 
 \keyword{ ~dplot }

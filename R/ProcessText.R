@@ -1,4 +1,4 @@
-processText <-
+ProcessText <-
 function(text, lower=TRUE, removepunctuation=TRUE, removenumbers=TRUE, removewhitespace=FALSE, removestopwords=FALSE, stemwords=FALSE) {
   if (class(text)[1]!="VCorpus"){
     stop("Remember to initialize text using initializeText()")
