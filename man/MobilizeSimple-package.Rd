@@ -12,7 +12,7 @@ Masks many complicated functions for creating maps and working with text into on
 \tabular{ll}{
 Package: \tab MobilizeSimple\cr
 Type: \tab Package\cr
-Version: \tab 1.2\cr
+Version: \tab 1.2.1\cr
 Date: \tab 2013-03-06\cr
 License: \tab GPL\cr
 }
