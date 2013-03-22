@@ -10,6 +10,9 @@ MakeMap <- function(latitude, longitude, e, scaleby, color='blue', symbol=20, ad
 	  x <- e
 	  subset1 <- which(projected[,2]<ymax(x) & projected[,2]>ymin(x) & projected[,1]<xmax(x) & projected[,1]>xmin(x))
     projected <- projected[subset1,]
+	  if (!missing(scaleby)){
+      scaleby <- scaleby[subset1]
+	  }
 	}
 	r = gmap(x)
   par.old <- par(no.readonly = TRUE)$mar;
