@@ -14,7 +14,7 @@ MakeWordBar(text, min.freq=2)
 a text object that has been initialized using the \code{\link{InitializeText}} function.
 }
 \item{min.freq}{
-the minimum frequency of words you want to appear in the bar plot. Default is 2, so only words that appear 2 or more times in your text will be displayed in the bar plot.
+the minimum frequency of words you want to appear in the bar plot. Default is 2, so only words that appear 2 or more times in your text will be displayed in the bar plot. You could change this to any other number that you wanted to be the minimum frequency. If you wanted all words that appeared, use 1.
 }
 \item{\dots}{
 graphical parameters to be passed to \code{\link{barplot}}. For example, you could change the color of the bars to blue by passing \code{col="blue"}, or orient the labels vertically by passing \code{las=2}. 
