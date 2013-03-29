@@ -1,4 +1,7 @@
 exportPattern("^[[:alpha:]]+")
+import(raster)
+import(dismo)
 importFrom("tm", TermDocumentMatrix, Corpus, VectorSource, tm_map)
-importFrom("wordcloud", wordcloud)
 importFrom("RColorBrewer", brewer.pal)
+import(sp)
+importFrom("wordcloud", wordcloud)
