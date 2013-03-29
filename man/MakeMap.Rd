@@ -7,7 +7,7 @@ Plotting points on a map
 A function that creates a plot of points on a background map pulled from Google Maps' API. 
 }
 \usage{
-MakeMap(latitude, longitude, e, scaleby, color = "blue", symbol = 20, add = FALSE)
+MakeMap(latitude, longitude, e, scaleby, color = "blue", symbol = 20, add = FALSE, ...)
 }
 \arguments{
   \item{latitude}{
@@ -30,6 +30,10 @@ either an integer specifying a symbol or a single character to be used as the de
 }
   \item{add}{
 a logical value specifying whether you want to add the plot you are creating to the previous one you created (for example, if plotting a different subset in a separate color to be displayed on the same map). Defaults to FALSE. 
+}
+
+\item{\dots}{
+graphical parameters to be passed to \code{\link{points}}. For example, you could change the size of the dots on the map by passing \code{cex=2}.
 }
 }
 \details{
