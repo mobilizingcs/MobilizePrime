@@ -12,8 +12,8 @@ t\details{
 \tabular{ll}{
 Package: \tab MobilizeSimple\cr
 Type: \tab Package\cr
-Version: \tab 1.2.4\cr
-Date: \tab 2013-03-28\cr
+Version: \tab 1.2.5\cr
+Date: \tab 2013-03-29\cr
 License: \tab GPL\cr
 }
 }
