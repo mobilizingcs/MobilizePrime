@@ -7,5 +7,5 @@ Author: Amelia McNamara
 Maintainer: Amelia McNamara <amelia.mcnamara@stat.ucla.edu>
 Description: Masks many complicated functions for creating maps and working with text into one-line functions. Written for the Mobilize project (\link{http://www.mobilizingcs.org})
 License: GPL
-Depends: R
-Import: raster, dismo, tm, RColorBrewer, sp, wordcloud
+Depends: dismo
+Import: tm, RColorBrewer, wordcloud
