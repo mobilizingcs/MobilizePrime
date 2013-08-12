@@ -14,7 +14,7 @@ MakeMap <- function(latitude, longitude, e, scaleby, add=FALSE, col='blue', pch=
       scaleby <- scaleby[subset1]
 	  }
 	}
-	r = gmap(x)
+	r = gmap(x, scale=2)
   par.old <- par(no.readonly = TRUE)$mar;
   if (add==FALSE) {
     plot(r, interpolate=TRUE) 

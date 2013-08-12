@@ -8,7 +8,7 @@ Simple functions for Mobilize
 \description{
 Masks many complicated functions for creating maps and working with text into one-line functions. Written for the Mobilize project (\link{http://www.mobilizingcs.org})
 }
-t\details{
+\details{
 \tabular{ll}{
 Package: \tab MobilizeSimple\cr
 Type: \tab Package\cr
