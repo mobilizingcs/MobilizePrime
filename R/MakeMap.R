@@ -21,7 +21,7 @@ MakeMap <- function(latitude, longitude, e, scaleby, add=FALSE, col='blue', pch=
   }
   if (!missing(scaleby)){
     radius <- sqrt(scaleby /pi)
-    symbols(projected, circles=radius, inches=0.35, add=TRUE, bg=col, ...)
+    symbols(projected, circles=radius, inches=0.35, add=TRUE, bg=col, fg='white',...)
   }
 	points(projected, col=col, pch=pch, ...)
   par(mar=par.old);
