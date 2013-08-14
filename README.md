@@ -9,4 +9,5 @@ To install the development version from github,
 ```r
 install.packages(c("dismo", "tm", "wordcloud", "devtools"))
 install_github("MobilizeSimple", "AmeliaMN)
+
 ```
