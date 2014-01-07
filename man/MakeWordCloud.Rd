@@ -4,7 +4,7 @@
 Plot a word cloud
 }
 \description{
-Creates a word cloud from text that has been initialized to work as text in R. 
+Creates a word cloud from text that has been initialized to work as text in R. Defaults to plotting top 100 most often occuring words. 
 }
 \usage{
 MakeWordCloud(text, color="BuGn", min.freq=2)
@@ -30,7 +30,7 @@ accepts either an integer or a percentage in the form of a decimal. If an intege
 \references{
 }
 \author{
-Amelia McNamara
+Amelia McNamara, James Molyneux
 }
 \note{
 }
