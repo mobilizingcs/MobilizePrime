@@ -17,5 +17,8 @@ WordFreqTable <- function (text, top = 1) {
     top.words <- head(d, n = n)
   } 
   print(top.words)  
+  if (top < 1) {
+    cat("Total number of words shows:", n, '\n')
+  }
   cat("Total number of words: ", base::nrow(d))
 }
