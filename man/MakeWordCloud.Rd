@@ -7,7 +7,7 @@ Plot a word cloud
 Creates a word cloud from text that has been initialized to work as text in R. Defaults to plotting top 100 most often occuring words. 
 }
 \usage{
-MakeWordCloud(text, color="BuGn", min.freq=2)
+MakeWordCloud(text, color="BuGn", min.freq=2, top=100)
 }
 \arguments{
   \item{text}{
