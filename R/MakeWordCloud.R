@@ -6,10 +6,10 @@ MakeWordCloud <- function(text, color="BuGn", min.freq=2, top = 1){
   m <- as.matrix(tdm)
   v <- sort(rowSums(m), decreasing=T)
   d <- data.frame(word=names(v), freq=v, row.names=NULL)
-  if (top > 1) {
+  if (top >= 1) {
     top.words <- head(d, n = top)
   }
-  if (top <= 1) {
+  if (top < 1) {
     n <- floor(nrow(d) * top)
     top.words <- head(d, n = n)
   }
