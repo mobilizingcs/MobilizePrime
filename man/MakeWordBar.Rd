@@ -30,7 +30,7 @@ graphical parameters to be passed to \code{\link{barplot}}. For example, you cou
 \references{
 }
 \author{
-Amelia McNamara
+Amelia McNamara, James Molyneux
 }
 \note{
 }
