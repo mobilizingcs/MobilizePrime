@@ -19,6 +19,9 @@ a color brewer specification for a color range. Defaults to "BuGn", but other op
 \item{min.freq}{
 the minimum frequency of words you want to appear in the word cloud. Default is 2, so only words that appear 2 or more times in your text will be displayed in the word cloud. You could change this to any other number that you wanted to be the minimum frequency. If you wanted all words that appeared, use 1.
 }
+\item{top}{
+accepts either an integer or a percentage in the form of a decimal. If an integer is used then the top integer value of words will be plotted. If a percentage, represented as a positive decimal, is used then the top percent value of words will be plotted.
+}
 }
 \details{
 }
@@ -37,6 +40,8 @@ Amelia McNamara
 \examples{
 data("crude")
 MakeWordCloud(crude, min.freq=10)
+MakeWordCloud(crude, min.freq=10, top=10)
+MakeWordCloud(crude, min.freq=10, top=0.01)
 }
 
 \keyword{ ~dplot }
