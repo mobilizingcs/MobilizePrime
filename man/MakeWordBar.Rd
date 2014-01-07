@@ -7,7 +7,7 @@ Create a bar plot of words
 Creates a bar plot of words from text that has been initialized to work as text in R.
 }
 \usage{
-MakeWordBar(text, min.freq=2)
+MakeWordBar(text, min.freq=2, top=100)
 }
 \arguments{
   \item{text}{
