@@ -1,6 +1,9 @@
-MakeWordBar <- function(text, min.freq=2, top = 100, ...){
+MakeWordBar <- function(text, min.freq=2, top = 50, format = 'count',...){
   if (class(text)[1]!="VCorpus"){
     stop("Remember to initialize text using initializeText()")
+  }
+  if (!missing(format) & (format != 'count' & format != 'percent')) {
+    stop("invalid 'format' argument. 'format' must either be 'count' or 'percent'")
   }
   old.par <- par(no.readonly = TRUE)$mar
   tdm <- TermDocumentMatrix(text)
@@ -8,7 +11,10 @@ MakeWordBar <- function(text, min.freq=2, top = 100, ...){
   v <- sort(rowSums(m), decreasing=T)
   d <- data.frame(word=names(v), freq=v, row.names=NULL)
   d <- d[d$freq>=min.freq,]
-  if (top >= 1) {
+  if (format == 'count') {
+    if (!missing(top) & (top <= 0)) {
+      stop("'top' must be a number greater than 0")
+    }
     top.words <- head(d$freq, n = top)
     top.words.names <- head(d$word, n = top)
     largest.word <- max(nchar(as.character(top.words.names)))
@@ -19,8 +25,14 @@ MakeWordBar <- function(text, min.freq=2, top = 100, ...){
       par(mar = old.par)
     }
   }
-  if (top < 1) {
-    n <- floor(nrow(d) * top)
+  if (format == 'percent') {
+    if (missing(top)) {
+      stop("'top' argument must be specificed when using format = 'percent'")
+    }
+    if (!missing(top) & (top <= 0 | top > 100 )) {
+      stop("'top' must be a number greater than 0 and less than or equal to 100")
+    }
+    n <- floor(nrow(d) * top/100)
     top.words <- head(d$freq, n = n)
     top.words.names <- head(d$word, n = n)
     largest.word <- max(nchar(as.character(top.words.names)))

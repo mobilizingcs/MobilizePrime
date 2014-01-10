@@ -5,6 +5,15 @@ MakeMap <- function(latitude, longitude, e, scaleby, shrink = 0, add=FALSE, col=
     latrange <- extendrange(latitude, f=0.04)
     lonrange <- extendrange(longitude, f=0.04)
     x <- extent(lonrange[1], lonrange[2], latrange[1], latrange[2])
+    f1 <- (latrange[2] - latrange[1])/(lonrange[2] - lonrange[1])
+    if (f1 < 1/4) {
+      latrange <- extendrange(latitude, f = 1.5 - f1)
+      x <- extent(lonrange[1], lonrange[2], latrange[1], latrange[2])      
+    }
+    if (f1 > 5/4) {
+      lonrange <- extendrange(longitude, f = f1 - 1)
+      x <- extent(lonrange[1], lonrange[2], latrange[1], latrange[2])      
+    }
   }
   else {
     x <- e
