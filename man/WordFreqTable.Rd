@@ -7,14 +7,17 @@ Prints the top words found in a corpus as specified by the user.
 Prints the top number or percentage of words from text that has been initialized to work as text in R.
 }
 \usage{
-WordFreqTable(text, top = 1)
+WordFreqTable(text, top = 100, format = 'count')
 }
 \arguments{
   \item{text}{
 a text object that has been initialized using the \code{\link{InitializeText}} function.
 }
 \item{top}{
-accepts either an integer or a percentage in the form of a decimal. If an integer is used then the top integer value of words will be printed. If a percentage, represented as a positive decimal, is used then the top percent value of words will be printed.
+an integer greater than 0 for format type 'count' or an integer greater than 0 and less than or equal to 100 for format type 'percent'. Determines the number of words, for 'count', or the percent of words, for 'percent', to plot.
+}
+\item{format}{
+must either be specified as 'count' or 'percent'. Use with the 'top' argument to determine how many words to plot.
 }
 }
 \details{
@@ -33,6 +36,6 @@ James Molyneux
 \examples{
 data("crude")
 WordFreqTable(crude, top=10) # Prints the top 10 words used.
-WordFreqTable(crude, top=0.10) # Prints the top 10\% of words used.
+WordFreqTable(crude, top=10, format = 'percent') # Prints the top 10\% of words used.
 }
 \keyword{ ~hplot }

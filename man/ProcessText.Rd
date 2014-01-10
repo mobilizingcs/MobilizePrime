@@ -7,11 +7,14 @@ Process text
 Process text that has been initialized to work as text in R.
 }
 \usage{
-ProcessText(text, lower = TRUE, removepunctuation = TRUE, removenumbers = TRUE, removewhitespace = FALSE, removestopwords = FALSE, stemwords = FALSE)
+ProcessText(text, stopwords.list = stopwords("en"), lower = TRUE, removepunctuation = TRUE, removenumbers = TRUE, removewhitespace = FALSE, removestopwords = FALSE, stemwords = FALSE)
 }
 \arguments{
   \item{text}{
 a text object that has been initialized using the \code{\link{InitializeText}} function.
+}
+  \item{stopwords.list}{
+  Specify a stopwords.list you would like to use. You can either specify a custom list or a preloaded list, like "en" or "SMART" by using the 'stopwords()' function.
 }
   \item{lower}{
 logical. Do you want to convert all the words to lower case? If so, leave the default as \code{TRUE}
@@ -51,5 +54,6 @@ Amelia McNamara
 \examples{
 data(crude)
 ProcessText(crude)
+PricessText(crude, stopwords.list = "SMART", removestopwords = TRUE)
 }
 \keyword{ ~manip }
