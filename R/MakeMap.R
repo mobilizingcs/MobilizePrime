@@ -1,4 +1,4 @@
-MakeMap <- function(latitude, longitude, e, scaleby, shrink = 0, add=FALSE, col='blue', pch=20, color, ...){
+MakeMap <- function(latitude, longitude, e, scaleby, size = 100, add=FALSE, col='blue', pch=20, color, ...){
   xy1 <- cbind(longitude, latitude)
   projected <- Mercator(xy1)
   if(!missing(color)) {
@@ -33,10 +33,10 @@ MakeMap <- function(latitude, longitude, e, scaleby, shrink = 0, add=FALSE, col=
   }
   if (!missing(scaleby)){
     radius <- sqrt(scaleby /pi)
-    bubble.size <- 0.35 * (100 - shrink) / 100
+    bubble.size <- 0.35 * size / 100
     symbols(projected[order(-radius), ], circles=radius[order(-radius)], inches=bubble.size, add=TRUE, bg=col, fg='white',...)
   }
-  point.size <- (100 - shrink) / 100
+  point.size <- size / 100
   points(projected, col=col, pch=pch, cex = point.size, ...)
   par(mar=par.old);
 }
