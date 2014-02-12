@@ -1,6 +1,9 @@
-MakeMap <- function(latitude, longitude, e, scaleby, shrink = 0, add=FALSE, col='blue', pch=20, ...){
+MakeMap <- function(latitude, longitude, e, scaleby, shrink = 0, add=FALSE, col='blue', pch=20, color, ...){
   xy1 <- cbind(longitude, latitude)
   projected <- Mercator(xy1)
+  if(!missing(color)) {
+    stop("Remember to use the argument 'col' and not 'color'.")
+  }
   if(missing(e)) {
     latrange <- extendrange(latitude, f=0.04)
     lonrange <- extendrange(longitude, f=0.04)

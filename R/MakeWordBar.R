@@ -1,4 +1,7 @@
-MakeWordBar <- function(text, min.freq=2, top = 50, format = 'count',...){
+MakeWordBar <- function(text, min.freq=2, top = 50, format = 'count', col = "steelblue", color,...){
+  if(!missing(color)) {
+    stop("Remember to use the argument 'col' and not 'color'.")
+  }
   if (class(text)[1]!="VCorpus"){
     stop("Remember to initialize text using initializeText()")
   }
@@ -43,6 +46,6 @@ MakeWordBar <- function(text, min.freq=2, top = 50, format = 'count',...){
       par(mar = old.par)
     }    
   }  
-  barplot(top.words, names.arg=top.words.names, las = 2, ...)
+  barplot(top.words, names.arg=top.words.names, las = 2, col = col, border = "white", ...)
   par(mar = old.par)
 }
