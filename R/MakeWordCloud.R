@@ -1,4 +1,8 @@
-MakeWordCloud <- function(text, color="BuGn", min.freq=2, top = 100, format = 'count'){
+MakeWordCloud <- function(text, col = "BuGn", min.freq=2, top = 100, format = 'count', color){
+  # This is to keep the function backward compatible between col and color
+  if (!missing(color) & missing(col)) {
+    col = color 
+  }
   if (class(text)[1]!="VCorpus"){
     stop("Remember to initialize text using initializeText()")
   }
@@ -25,7 +29,7 @@ MakeWordCloud <- function(text, color="BuGn", min.freq=2, top = 100, format = 'c
     n <- floor(nrow(d) * top/100)
     top.words <- head(d, n = n)
   }
-  pal <- brewer.pal(9,color)
+  pal <- brewer.pal(9,col)
   pal <- pal[-(1:4)]
   wordcloud(top.words$word, top.words$freq, random.color=T, min.freq=min.freq, color=pal)
 }
