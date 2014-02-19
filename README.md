@@ -8,5 +8,5 @@ To install the development version from github,
 
 ```r
 install.packages(c("dismo", "tm", "wordcloud", "rgdal", "devtools"))
-install_github("MobilizeSimple", "AmeliaMN")
+install_github("MobilizeSimple", "mobilizingcs")
 ```
