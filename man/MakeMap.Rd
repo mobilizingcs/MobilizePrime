@@ -58,10 +58,13 @@ Amelia McNamara, James Molyneux
 lat <- runif(10, 32, 42)
 lon <- runif(10, -124, -114)
 scale <- sample(1:10, 10)
+type <- as.factor(sample(c("a","b","c"), size = 10, replace = TRUE))
 MakeMap(lat, lon)
 MakeMap(lat, lon, scaleby = scale)
 MakeMap(lat, lon, scaleby = scale, size = 50)   # shrink bubbles by 50\%
 MakeMap(lat, lon, scaleby = scale, size = 150)  # expand bubbles by 50\%
+MakeMap(lat, lon, col = type)
+MakeMap(lat, lon, scaleby = scale, col = type)
 }
 \keyword{ ~hplot }
 \keyword{ ~iplot }

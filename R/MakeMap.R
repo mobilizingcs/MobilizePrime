@@ -42,9 +42,14 @@ MakeMap <- function(latitude, longitude, e, scaleby, size = 100, add=FALSE, col=
   if (!missing(scaleby)){
     radius <- sqrt(scaleby /pi)
     bubble.size <- 0.35 * size / 100
-    symbols(projected[order(-radius), ], circles=radius[order(-radius)], inches=bubble.size, add=TRUE, bg=col, fg='white',...)
+    if (is.factor(col)) {
+      symbols(projected[order(-radius), ], circles=radius[order(-radius)], inches=bubble.size, add=TRUE, bg=col[order(-radius)], fg='white',...)
+    } else {
+      symbols(projected[order(-radius), ], circles=radius[order(-radius)], inches=bubble.size, add=TRUE, bg=col, fg='white',...)
+    }
+  } else {
+    point.size <- size / 100
+      points(projected, col=col, pch = pch, cex = point.size)
+      par(mar=par.old);   
   }
-  point.size <- size / 100
-  points(projected, col=col, pch=pch, cex = point.size, ...)
-  par(mar=par.old);
 }
