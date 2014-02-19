@@ -41,15 +41,6 @@ MakeMap <- function(latitude, longitude, e, scaleby, size = 100, add=FALSE, col=
   }
   if (!missing(scaleby)){
     radius <- sqrt(scaleby /pi)
-<<<<<<< HEAD
-<<<<<<< HEAD
-    symbols(projected, circles=radius, inches=0.35, add=TRUE, bg=col, fg='white',...)
-  }
-	points(projected, col=col, pch=pch, ...)
-  par(mar=par.old);
-=======
-=======
->>>>>>> 2014-development
     bubble.size <- 0.35 * size / 100
     if (is.factor(col)) {
       symbols(projected[order(-radius), ], circles=radius[order(-radius)], inches=bubble.size, add=TRUE, bg=col[order(-radius)], fg='white',...)
@@ -58,13 +49,7 @@ MakeMap <- function(latitude, longitude, e, scaleby, size = 100, add=FALSE, col=
     }
   } else {
     point.size <- size / 100
-      points(projected, col=col, pch = pch, cex = point.size)
-      par(mar=par.old);   
-<<<<<<< HEAD
->>>>>>> 2014-development
+    points(projected, col=col, pch = pch, cex = point.size)
+    par(mar=par.old);   
   }
 }
-=======
-  }
-}
->>>>>>> 2014-development
