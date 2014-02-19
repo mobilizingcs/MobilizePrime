@@ -1,7 +1,7 @@
 Package: MobilizeSimple
 Type: Package
 Title: Simple functions for Mobilize
-Version: 1.2.7
+Version: 1.2.8
 Date: 2013-04-09
 Author: Amelia McNamara
 Maintainer: Amelia McNamara <amelia.mcnamara@stat.ucla.edu>
