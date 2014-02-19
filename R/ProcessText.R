@@ -1,5 +1,5 @@
 ProcessText <-
-function(text, lower=TRUE, removepunctuation=TRUE, removenumbers=TRUE, removewhitespace=FALSE, removestopwords=FALSE, stemwords=FALSE) {
+function(text, stopwords.list = stopwords("en"), lower=TRUE, removepunctuation=TRUE, removenumbers=TRUE, removewhitespace=FALSE, removestopwords=FALSE, stemwords=FALSE) {
   if (class(text)[1]!="VCorpus"){
     stop("Remember to initialize text using initializeText()")
   }
@@ -16,7 +16,7 @@ function(text, lower=TRUE, removepunctuation=TRUE, removenumbers=TRUE, removewhi
     text <- tm_map(text, stripWhitespace)
   }
   if (removestopwords){
-    text <- tm_map(text, removeWords, stopwords("english"))
+    text <- tm_map(text, removeWords, stopwords.list)
   }
   if (stemwords){
     text <- tm_map(text, stemDocument)

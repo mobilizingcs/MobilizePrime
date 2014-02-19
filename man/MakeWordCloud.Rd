@@ -4,10 +4,10 @@
 Plot a word cloud
 }
 \description{
-Creates a word cloud from text that has been initialized to work as text in R. 
+Creates a word cloud from text that has been initialized to work as text in R. Defaults to plotting top 100 most often occuring words. 
 }
 \usage{
-MakeWordCloud(text, color="BuGn", min.freq=2)
+MakeWordCloud(text, color="BuGn", min.freq=2, top=100, format = 'count')
 }
 \arguments{
   \item{text}{
@@ -19,6 +19,12 @@ a color brewer specification for a color range. Defaults to "BuGn", but other op
 \item{min.freq}{
 the minimum frequency of words you want to appear in the word cloud. Default is 2, so only words that appear 2 or more times in your text will be displayed in the word cloud. You could change this to any other number that you wanted to be the minimum frequency. If you wanted all words that appeared, use 1.
 }
+\item{top}{
+an integer greater than 0 for format type 'count' or an integer greater than 0 and less than or equal to 100 for format type 'percent'. Determines the number of words, for 'count', or the percent of words, for 'percent', to plot.
+}
+\item{format}{
+must either be specified as 'count' or 'percent'. Use with the 'top' argument to determine how many words to plot.
+}
 }
 \details{
 }
@@ -27,7 +33,7 @@ the minimum frequency of words you want to appear in the word cloud. Default is 
 \references{
 }
 \author{
-Amelia McNamara
+Amelia McNamara, James Molyneux
 }
 \note{
 }
@@ -36,7 +42,10 @@ Amelia McNamara
 }
 \examples{
 data("crude")
-MakeWordCloud(crude, min.freq=10)
+MakeWordCloud(crude, min.freq=15)
+MakeWordCloud(crude, top=25)
+MakeWordCloud(crude, top = 5, format = 'percent')
+MakeWordCloud(crude, min.freq=15, top = 5, format = 'percent')
 }
 
 \keyword{ ~dplot }

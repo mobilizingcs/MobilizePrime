@@ -1,8 +1,4 @@
-MakeWordCloud <- function(text, col = "BuGn", min.freq=2, top = 100, format = 'count', color){
-  # This is to keep the function backward compatible between col and color
-  if (!missing(color) & missing(col)) {
-    col = color 
-  }
+WordFreqTable <- function (text, top = 100, format = 'count') {
   if (class(text)[1]!="VCorpus"){
     stop("Remember to initialize text using initializeText()")
   }
@@ -17,6 +13,10 @@ MakeWordCloud <- function(text, col = "BuGn", min.freq=2, top = 100, format = 'c
     if (!missing(top) & (top <= 0)) {
       stop("'top' must be a number greater than 0")
     }
+    if (!missing(top) & top > nrow(d)) {
+      top = nrow(d)
+    }
+    n <- top
     top.words <- head(d, n = top)
   }
   if (format == 'percent') {
@@ -28,8 +28,9 @@ MakeWordCloud <- function(text, col = "BuGn", min.freq=2, top = 100, format = 'c
     }
     n <- floor(nrow(d) * top/100)
     top.words <- head(d, n = n)
-  }
-  pal <- brewer.pal(9,col)
-  pal <- pal[-(1:4)]
-  wordcloud(top.words$word, top.words$freq, random.color=T, min.freq=min.freq, color=pal)
+  } 
+  print(top.words)  
+  cat("\n")
+  cat("Total number of words shown:", n, '\n')
+  cat("Total number of words: ", base::nrow(d))
 }

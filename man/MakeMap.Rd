@@ -7,7 +7,7 @@ Plotting points on a map
 A function that creates a plot of points on a background map pulled from Google Maps' API. 
 }
 \usage{
-MakeMap(latitude, longitude, e, scaleby, col = "blue", symbol = 20, add = FALSE, ...)
+MakeMap(latitude, longitude, e, scaleby, size = 100, col = "blue", symbol = 20, add = FALSE, ...)
 }
 \arguments{
   \item{latitude}{
@@ -21,6 +21,9 @@ the extent for the map. If not given, the function will determine an extent from
 }
 \item{scaleby}{
 the variable for bubbles to be scaled by in a bubble plot. 
+}
+\item{size}{
+Allows the user to shrink or expand the size of the plotted points as a percent of the default points size. For example, size = 80 would display points that are 80% of their original size. Size = 120 would display points that are 120% of their original size.
 }
   \item{col}{
 a specification for the plotting color. Defaults to "blue". You can provide any color name here, like "red", "purple", etc., in quotes. Or, you could use hex values like "FF00FF", again in quotes. See section 'Color Specification' in the \code{\link{par}} documentation for more. 
@@ -44,7 +47,7 @@ Produces a map.
 \references{
 }
 \author{
-Amelia McNamara
+Amelia McNamara, James Molyneux
 }
 \note{
 }
@@ -54,8 +57,14 @@ Amelia McNamara
 \examples{
 lat <- runif(10, 32, 42)
 lon <- runif(10, -124, -114)
+scale <- sample(1:10, 10)
+type <- as.factor(sample(c("a","b","c"), size = 10, replace = TRUE))
 MakeMap(lat, lon)
-
+MakeMap(lat, lon, scaleby = scale)
+MakeMap(lat, lon, scaleby = scale, size = 50)   # shrink bubbles by 50\%
+MakeMap(lat, lon, scaleby = scale, size = 150)  # expand bubbles by 50\%
+MakeMap(lat, lon, col = type)
+MakeMap(lat, lon, scaleby = scale, col = type)
 }
 \keyword{ ~hplot }
 \keyword{ ~iplot }
