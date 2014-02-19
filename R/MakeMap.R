@@ -5,19 +5,27 @@ MakeMap <- function(latitude, longitude, e, scaleby, size = 100, add=FALSE, col=
     stop("Remember to use the argument 'col' and not 'color'.")
   }
   if(missing(e)) {
-    latrange <- extendrange(latitude, f=0.04)
-    lonrange <- extendrange(longitude, f=0.04)
-    x <- extent(lonrange[1], lonrange[2], latrange[1], latrange[2])
-    f1 <- (latrange[2] - latrange[1])/(lonrange[2] - lonrange[1])
-    if (f1 < 1/4) {
-      latrange <- extendrange(latitude, f = 1.5 - f1)
-      x <- extent(lonrange[1], lonrange[2], latrange[1], latrange[2])      
+    if(nrow(projected) == 1) {
+      latrange <- extendrange(latitude, r = c(latitude - 0.1, latitude + 0.1),
+                              f=0.3)
+      lonrange <- extendrange(longitude, r = c(longitude - 0.1, longitude + 0.1),
+                              f=0.5)
+      x <- extent(lonrange[1], lonrange[2], latrange[1], latrange[2])
+    } else {
+      latrange <- extendrange(latitude, f=0.04)
+      lonrange <- extendrange(longitude, f=0.04)
+      x <- extent(lonrange[1], lonrange[2], latrange[1], latrange[2])
+      f1 <- (latrange[2] - latrange[1])/(lonrange[2] - lonrange[1])
+      if (f1 < 1/4) {
+        latrange <- extendrange(latitude, f = 1.5 - f1)
+        x <- extent(lonrange[1], lonrange[2], latrange[1], latrange[2])      
+      }
+      if (f1 > 5/4) {
+        lonrange <- extendrange(longitude, f = f1 - 1)
+        x <- extent(lonrange[1], lonrange[2], latrange[1], latrange[2])      
+      }
     }
-    if (f1 > 5/4) {
-      lonrange <- extendrange(longitude, f = f1 - 1)
-      x <- extent(lonrange[1], lonrange[2], latrange[1], latrange[2])      
-    }
-  }
+  }  
   else {
     x <- e
     subset1 <- which(projected[,2]<ymax(x) & projected[,2]>ymin(x) & projected[,1]<xmax(x) & projected[,1]>xmin(x))
