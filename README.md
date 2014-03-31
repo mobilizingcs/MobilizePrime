@@ -10,3 +10,8 @@ To install the development version from github,
 install.packages(c("dismo", "tm", "wordcloud", "rgdal", "devtools"))
 install_github("MobilizeSimple", "mobilizingcs")
 ```
+
+Then you can access the package using the command
+```r
+library(MobilizeSimple)
+```
