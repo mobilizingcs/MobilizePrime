@@ -5,8 +5,8 @@ atus_format <- function(data){
     my_vars <- c("chores", "day","friends","grooming","homework","meals",
                  "online","read","school","sleep","sports","television",
                  "travel","videogames","work")
-    Time.Use[, my_vars] <- sapply(Time.Use[, my_vars], as.character)
-    Time.Use[, my_vars] <- sapply(Time.Use[, my_vars], as.numeric)
+    data[, my_vars] <- sapply(data[, my_vars], as.character)
+    data[, my_vars] <- sapply(data[, my_vars], as.numeric)
     sum_atus <- data %.% 
         group_by(user.id, day) %.% 
         summarise(chores = sum(chores), 
