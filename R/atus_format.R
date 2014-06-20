@@ -28,7 +28,7 @@ atus_format <- function(data){
         summarise(chores = mean(chores), 
                   friends = mean(friends), 
                   grooming = mean(grooming), 
-                  homwork = mean(homework), 
+                  homework = mean(homework), 
                   meals = mean(meals), 
                   online = mean(online), 
                   read = mean(read), 
