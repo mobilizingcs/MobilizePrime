@@ -1,7 +1,7 @@
 footsize_format <- function(data) {
     require(dplyr)
     # data(foot_size_ref)
-    data(women_footsize_ref)
+    data(women_footsize_reference)
     df <- data %.% select(user.id, 
                           birth_gender = birth_gender.label,
                           shoe_size = shoe_size.value, 
