@@ -1,5 +1,6 @@
 MAD.simple <- function(x) {
-    mad <- SAD(x) / n
+    n <- length(x)
+    mad <- SAD.simple(x) / n
     return(mad)
 }
 
