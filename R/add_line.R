@@ -1,6 +1,6 @@
 add_line <- function(units = "native") {
     trellis.focus("panel", 1, 1)
-    cat("Select 2 data points to draw a line through: \n")
+    cat("Select 2 data points to draw a line through: \n\n")
     ind1_raw <- grid.locator(unit = "native")
     ind2_raw <- grid.locator(unit = "native")
     ind1 <- as.numeric(ind1_raw)
