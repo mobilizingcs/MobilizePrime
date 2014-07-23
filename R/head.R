@@ -1,0 +1,1 @@
+head <- aggregatingFunction1(head)
