@@ -11,4 +11,3 @@ add_line <- function(units = "native") {
     cat("Equation of the line: \n")
     cat("y = ", b, "* x + ", a)
 }
-add_line()
