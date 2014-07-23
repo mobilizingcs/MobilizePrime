@@ -1,1 +1,1 @@
-head <- aggregatingFunction1(head)
+head <- aggregatingFunction1(utils::head)

@@ -1,1 +1,1 @@
-tail <- aggregatingFunction1(tail)
+tail <- aggregatingFunction1(utils::tail)

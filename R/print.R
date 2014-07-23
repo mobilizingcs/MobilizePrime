@@ -1,1 +1,1 @@
-print <- aggregatingFunction1(print)
+print <- aggregatingFunction1(base::print)
