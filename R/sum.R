@@ -8,6 +8,3 @@ sum <- function(...) {
     }
     return(output)
 }
-
-data(cdc)
-sum(~height, data=cdc)

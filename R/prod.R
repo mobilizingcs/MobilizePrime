@@ -8,6 +8,3 @@ prod <- function(...) {
     }
     return(output)
 }
-
-data(cdc)
-prod(~height, data=cdc)
