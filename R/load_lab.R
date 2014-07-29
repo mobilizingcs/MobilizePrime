@@ -1,3 +1,18 @@
+format_lab_title <- function (x) {
+    x_lower <- tolower(x)
+    x_nospace <- gsub(x = x_lower, pattern = ' ', replacement = "")
+    gsub(x = x_nospace, pattern = "-", replacement = "")
+}
+
+lab_selector <- function (lab_titles) {
+    selection <- menu(lab_titles)
+    lab_urls <- paste0('http://www.stat.ucla.edu/~james.molyneux/',
+                       format_lab_title(lab_titles),
+                       '.html')
+    url <- lab_urls[selection]
+    return(url)
+}
+
 load_lab <- function() {
     unit_1_titles <- c("Unit 1 - Lab 1",
                     "Unit 1 - Lab 2",
@@ -38,5 +53,3 @@ load_lab <- function() {
     writeLines(page, tf)
     rstudio::viewer(tf)
 }
-
-load_lab()
