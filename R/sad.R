@@ -1,6 +1,6 @@
 SAD.simple <- function(x) {
     mean.x <- base::mean(x)
-    abs.deviation <- abs(x - mean.x)
+    abs.deviation <- base::abs(x - mean.x)
     sad <- base::sum(abs.deviation)
     return(sad)
 }
