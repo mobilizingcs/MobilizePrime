@@ -1,8 +1,7 @@
 SAD.simple <- function(x) {
-    mean.x <- mean(x)
-    n <- length(x)
+    mean.x <- base::mean(x)
     abs.deviation <- abs(x - mean.x)
-    sad <- sum(abs.deviation)
+    sad <- base::sum(abs.deviation)
     return(sad)
 }
 
