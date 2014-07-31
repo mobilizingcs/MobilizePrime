@@ -7,11 +7,3 @@ MAD.simple <- function(x) {
 }
 
 MAD <- aggregatingFunction1 (MAD.simple)
-
-x <- 1:10
-colors <- read.csv("~/Downloads/Personality Color.csv")
-data(cdc)
-
-MAD(x)
-MAD(~blue, data = colors)
-MAD(~height | gender, data=cdc)

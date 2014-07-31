@@ -13,3 +13,5 @@ SAD.simple <- function(x, ...) {
         return(sad)
     }
 }
+
+SAD <- aggregatingFunction1(SAD.simple)
