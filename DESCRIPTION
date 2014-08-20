@@ -1,10 +1,10 @@
 Package: MobilizeSimple
 Type: Package
 Title: Simple functions for Mobilize
-Version: 1.2.10
+Version: 1.2.16
 Date: 2013-04-09
 Author: Amelia McNamara
 Maintainer: Amelia McNamara <amelia.mcnamara@stat.ucla.edu>
 Description: Masks many complicated functions for creating maps and working with text into one-line functions. Written for the Mobilize project (\link{http://www.mobilizingcs.org})
 License: GPL
-Depends: raster, dismo, tm, RColorBrewer, rgdal, sp, wordcloud, dplyr, mosaic
+Depends: raster, dismo, tm, RColorBrewer, rgdal, sp, wordcloud, dplyr, mosaic, latticeExtra
