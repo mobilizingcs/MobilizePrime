@@ -78,3 +78,5 @@ MakeMap <- function(latitude, longitude, e, scaleby, size = 100, add=FALSE, col=
     par(mar=par.old);   
   }
 }
+
+make_map <- function(...) MakeMap(...)
