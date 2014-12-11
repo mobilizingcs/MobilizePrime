@@ -1,5 +1,30 @@
-MakeMap <- function(latitude, longitude, e, scaleby, size = 100, add=FALSE, col='blue', pch=20, color, ...){
-  xy1 <- cbind(longitude, latitude)
+MakeMap <- function(latitude, longitude, e, scaleby, size = 100, add=FALSE, col='blue', pch=20, color, data, ...){
+  if(!missing(data)) {
+    data <- substitute(data)
+    longitude <- substitute(longitude)
+    latitude <- substitute(latitude)
+    long_text <- paste0(data, "$", longitude)
+    lat_text <- paste0(data, "$", latitude)
+    longitude <- eval(parse(text=long_text))
+    latitude <- eval(parse(text=lat_text))
+    xy1 <- cbind(longitude, latitude)
+    if(!missing(scaleby)) {
+      scaleby <- substitute(scaleby)
+      scaleby_text <- paste0(data, "$", scaleby)
+      scaleby <- eval(parse(text=scaleby_text))
+    }
+    if(!missing(col)) {
+      if(class(col)!="character") {
+        col <- substitute(col)
+        col_text <- paste0(data, "$", col)
+        col <- as.factor(as.character(eval(parse(text=col_text))))
+      } else {
+        col <- substitute(col)
+      }
+    }
+  } else {
+    xy1 <- cbind(longitude, latitude) 
+  }
   projected <- Mercator(xy1)
   if(!missing(color)) {
     stop("Remember to use the argument 'col' and not 'color'.")
@@ -53,3 +78,5 @@ MakeMap <- function(latitude, longitude, e, scaleby, size = 100, add=FALSE, col=
     par(mar=par.old);   
   }
 }
+
+make_map <- function(...) MakeMap(...)
