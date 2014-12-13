@@ -14,6 +14,7 @@ MakeMap <- function(latitude, longitude, e, scaleby, size = 100, add=FALSE, col=
       scaleby <- eval(parse(text=scaleby_text))
     }
     if(!missing(col)) {
+      col <- substitute(col)
       if(class(col)!="character") {
         col <- substitute(col)
         col_text <- paste0(data, "$", col)
