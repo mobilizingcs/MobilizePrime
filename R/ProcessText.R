@@ -1,5 +1,5 @@
 ProcessText <-
-function(text, stopwords.list = stopwords("en"), lower=TRUE, removepunctuation=TRUE, removenumbers=TRUE, removewhitespace=FALSE, removestopwords=FALSE, stemwords=FALSE) {
+function(text, stopwords.list = stopwords("SMART"), lower=TRUE, removepunctuation=TRUE, removenumbers=TRUE, removewhitespace=FALSE, removestopwords=FALSE, stemwords=FALSE) {
   if (class(text)[1]!="VCorpus"){
     stop("Remember to initialize text using initializeText()")
   }
