@@ -20,7 +20,7 @@ MakeWordBar <- function(text, min.freq=2, top = 50, format = 'count', col = "ste
     }
     top.words <- head(d$freq, n = top)
     top.words.names <- head(d$word, n = top)
-    largest.word <- max(nchar(as.character(top.words.names)))
+    largest.word <- base::max(nchar(as.character(top.words.names)))
     if (largest.word > 8) {
       adj = (largest.word - 7) / 3
       par(mar = old.par + c(adj, 0, 0, 0))
@@ -38,7 +38,7 @@ MakeWordBar <- function(text, min.freq=2, top = 50, format = 'count', col = "ste
     n <- floor(nrow(d) * top/100)
     top.words <- head(d$freq, n = n)
     top.words.names <- head(d$word, n = n)
-    largest.word <- max(nchar(as.character(top.words.names)))
+    largest.word <- base::max(nchar(as.character(top.words.names)))
     if (largest.word > 8) {
       adj = (largest.word - 7) / 3
       par(mar = old.par + c(adj, 0, 0, 0))
