@@ -47,10 +47,15 @@ load_lab <- function() {
                        "Unit 3 - Lab 5",
                        "Unit 3 - Lab 6",
                        "Unit 3 - Lab 7")
+    unit_4_titles <- c("Unit 4 - Lab 1",
+                       "Unit 4 - Lab 2",
+                       "Unit 4 - Lab 3",
+                       "Unit 4 - Lab 4")
     
     lab_titles <- c(unit_1_titles,
                     unit_2_titles,
-                    unit_3_titles)
+                    unit_3_titles,
+                    unit_4_titles)
     
     url <- lab_selector(lab_titles)
     
