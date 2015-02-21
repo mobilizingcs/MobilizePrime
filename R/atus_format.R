@@ -7,8 +7,8 @@ atus_format <- function(data){
                  "travel","videogames","work")
     data[, my_vars] <- sapply(data[, my_vars], as.character)
     data[, my_vars] <- sapply(data[, my_vars], as.numeric)
-    sum_atus <- data %.% 
-        group_by(user.id, day) %.% 
+    sum_atus <- data %>% 
+        group_by(user.id, day) %>% 
         summarise(chores = sum(chores), 
                   friends = sum(friends), 
                   grooming = sum(grooming), 
@@ -23,8 +23,8 @@ atus_format <- function(data){
                   travel = sum(travel), 
                   videogames = sum(videogames), 
                   work = sum(work))
-    mean_atus <- sum_atus %.% 
-        group_by(user.id) %.% 
+    mean_atus <- sum_atus %>% 
+        group_by(user.id) %>% 
         summarise(chores = mean(chores), 
                   friends = mean(friends), 
                   grooming = mean(grooming), 
