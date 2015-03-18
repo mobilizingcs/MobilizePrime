@@ -50,7 +50,11 @@ load_lab <- function() {
     unit_4_titles <- c("Unit 4 - Lab 1",
                        "Unit 4 - Lab 2",
                        "Unit 4 - Lab 3",
-                       "Unit 4 - Lab 4")
+                       "Unit 4 - Lab 4",
+                       "Unit 4 - Lab 5",
+                       "Unit 4 - Lab 6",
+                       "Unit 4 - Lab 7",
+                       "Unit 4 - Lab 8")
     
     lab_titles <- c(unit_1_titles,
                     unit_2_titles,
