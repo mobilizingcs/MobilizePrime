@@ -1,0 +1,3 @@
+tree <- function(...) {
+  rpart::rpart(...)
+}
